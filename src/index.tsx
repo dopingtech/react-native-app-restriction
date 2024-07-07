@@ -63,6 +63,7 @@ export const AppRestrictionView = forwardRef<RefProps, AppRestrictionProps>(
         clearRestrictedApps: (): void => {
           UIManager.dispatchViewManagerCommand(
             findNodeHandle(nativeRef.current),
+            // @ts-ignore
             UIManager.AppRestrictionView.Commands.clearRestrictedApps,
             []
           );
@@ -70,6 +71,7 @@ export const AppRestrictionView = forwardRef<RefProps, AppRestrictionProps>(
         addRestrictedApps: (base64Data: string): void => {
           UIManager.dispatchViewManagerCommand(
             findNodeHandle(nativeRef.current),
+            // @ts-ignore
             UIManager.AppRestrictionView.Commands.addRestrictedApps,
             [base64Data]
           );
@@ -112,9 +114,9 @@ export const AppRestrictionView = forwardRef<RefProps, AppRestrictionProps>(
         errorSubscription.remove();
       };
     }, []);
-
     return (
       <Fragment>
+        {/*@ts-ignore*/}
         <NativeComponent ref={nativeRef} show={props.show} />
       </Fragment>
     );
