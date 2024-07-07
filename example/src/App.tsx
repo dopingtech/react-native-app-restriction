@@ -9,7 +9,7 @@ import {
 import { AppRestrictionView } from 'react-native-app-restriction';
 import { type MutableRefObject, useEffect, useRef, useState } from 'react';
 
-export default function App() {
+export default function App(): Element {
   const [base64Data, setBase64Data] = useState<any>(null);
   const [showPicker, setShowPicker] = useState<any>(false);
   const [disableAppRestriction, setDisableAppRestriction] = useState<any>(true);
